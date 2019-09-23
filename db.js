@@ -24,3 +24,16 @@ var userSchema=mongoose.Schema({
 
 exports.User=mongoose.model('User',userSchema,'users');
 
+var roommateRequestSchema=mongoose.Schema({
+    userId: String,
+    area:String,
+    city:String,
+    rent:Number,
+    numberOfRoommates:Number,
+    createdDate:{
+        type:Date,
+        default:Date.now
+    }
+})
+
+exports.RommateRequest=mongoose.model('RoommateRequest',roommateRequestSchema,'requests')
